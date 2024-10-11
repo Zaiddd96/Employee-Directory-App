@@ -36,7 +36,9 @@ fun MyApp() {
             val name = backStackEntry.arguments?.getString("name")
             val age = backStackEntry.arguments?.getString("age")?.toIntOrNull()
             val salary = backStackEntry.arguments?.getString("salary")?.toIntOrNull()
-            DetailScreen(name = name ?: "Unknown", age = age, salary = salary)
+            DetailScreen(name = name ?: "Unknown", age = age, salary = salary){
+                navController.navigate("MainScreen")
+            }
         }
     }
 }
